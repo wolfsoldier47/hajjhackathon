@@ -1,0 +1,145 @@
+{% include 'nav.html'%}
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+
+  </script>
+<style>
+.texy{
+  text-align:left;
+  float:left;
+}
+.tex_right{
+  float:right;
+}
+.sam{
+
+    float: left;
+}
+.vam{
+  position:relative;
+   transition: .5s ease;
+   left: -50px;
+   right: 200px;
+   top:20px;
+
+
+}
+.vam2{
+  position:relative;
+   transition: .5s ease;
+   left: -50px;
+   right: 200px;
+   top:20px;
+
+
+
+}
+</style>
+
+
+<body>
+{% block body %}
+{% endblock%}
+
+        <main role="main" class="container ">
+            <div class="jumbotron text-center">
+                <h1>Hajj Hackathon</h1>
+                <p class="lead text-info">Qr System</p>
+
+
+
+                <button type="button" class="btn btn-primary vam2" data-toggle="modal" data-target="#exampleModal">
+                  register
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" action="{{ url_for('qr') }}" method="POST">
+                        <div class="form-group">
+                          <label class="control-label col-sm-2 texy" for="Full_name" >Full_name</label>
+                          <div class="col-sm-4">
+                            <input name="Full_name"  class="form-control" id="Full_name" placeholder="Enter Full name" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-sm-4 texy" for="Nationality">Nationality</label>
+                          <div class="col-sm-4">
+                            <input name="Nationality" class="form-control" id="Nationality" placeholder="Enter city" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-sm-4 texy" for="Age">Age</label>
+                          <div class="col-sm-4">
+                          <input name="Age" class="form-control" id="Age" placeholder="Enter city" required>
+                        </div></div>
+
+                        <div class="form-group">
+                        <label class="control-label col-sm-4 texy" for="Phone_number">Phone number</label>
+                        <div class="col-sm-4">
+                          <input name="Phone_number" class="form-control" id="Phone_number" placeholder="Enter city" required>
+                        </div></div>
+
+                        <div class="form-group">
+                        <label class="control-label col-sm-4 texy" for="passport_number">Passport number</label>
+                        <div class="col-sm-4">
+                          <input name="passport_number" class="form-control" id="passport_number" placeholder="Enter city" required>
+                        </div></div>
+
+
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                          </div> </div>
+
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-2">
+                            <button type="submit" class="btn btn-default" >Submit</button>
+                          </div>
+
+                        </div>
+                        </form>
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+<div >
+  {{ msg }}
+    <img src='{{image_name}}' width="200" height="200" alt=" " onerror="arguments[0].currentTarget.style.display='none'" style="float:left;  position:relative;top:-200px;">
+</div>
+  <div class="col-sm-12">
+  <button type="button" class="btn btn-primary btn-md tex_right vam " >search in Database</button>
+</div>
+        </main>
+
+
+
+        <script src="{{url_for('static',filename='js/jquery.min.js')}}" ></script>
+        <script src="{{url_for('static',filename='js/popper.min.js')}}" ></script>
+        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/navbar.js')}}"></script>
+
+
+    </body>
+
+
+</html>

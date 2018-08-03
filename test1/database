@@ -1,0 +1,9 @@
+BEGIN TRANSACTION;
+CREATE TABLE `students` (
+	`id`	INTEGER NOT NULL,
+	`name`	TEXT NOT NULL,
+	`addr`	TEXT NOT NULL,
+	`key`	TEXT,
+	PRIMARY KEY(id)
+);
+COMMIT;

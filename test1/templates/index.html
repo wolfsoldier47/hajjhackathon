@@ -1,0 +1,21 @@
+{% include 'nav.html'%}
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="{{url_for('static',filename='js/jquery.min.js')}}" ></script>
+  <script src="{{url_for('static',filename='js/popper.min.js')}}" ></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+
+  <script src="{{url_for('static',filename='js/navbar.js')}}"></script>
+{% block body %}
+{% endblock%}
+
+        <main role="main" class="container">
+            <div class="jumbotron text-center">
+                <h1>Hajj Hackathon</h1>
+                <p class="lead text-info">Management system</p>
+            </div>
+        </main>
+
+    </body>
+</html>
